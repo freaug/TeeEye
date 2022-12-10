@@ -57,7 +57,6 @@ void setup() {
   //set to alpha lock for letters
   setCaps();
 }
-
 void loop() {
   clearScreen();
   //beep random leds for visual effect
@@ -86,7 +85,6 @@ void spacer() {
 //helper function to make sure the aphaPins are writing the correct letters
 void letters() {
   for (int i = 0; i < 26; i++) {
-    Serial.println(alphPins[i]);
     digitalWrite(alphPins[i], HIGH);
     delay(250);
     digitalWrite(alphPins[i], LOW);
@@ -97,8 +95,6 @@ void letters() {
 void writeWords(String _in, int _del) {
   int del = _del;
   String in = _in;
-  Serial.println(in.length());
-  Serial.println(in);
   for (int i = 0; i < in.length(); i++) {
     switch (in[i]) {
       case 'a':
